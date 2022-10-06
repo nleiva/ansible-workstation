@@ -1,0 +1,10 @@
+common_software:
+  - code
+  - htop
+  - tree
+  - chromium
+
+base_software:
+  RedHat:
+    - bind-utils
+      #- NetworkManager-openvpn

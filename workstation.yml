@@ -1,0 +1,23 @@
+# ansible-playbook workstation.yml -K
+
+- name: Setup Lab machines
+  hosts: localhost
+  gather_facts: true
+  vars_files: inputs.yml
+
+  pre_tasks:
+    - name: Starting debug message
+      ansible.builtin.debug:
+        msg: "It will start working on {{ inventory_hostname }}:{{ ansible_host }}"
+
+  roles:
+    - role: rpm_repos
+      become: true
+    - role: install_pkgs
+      become: true
+
+  tasks:
+    - name: Finishing debug message
+      ansible.builtin.debug:
+        msg: "{{ inventory_hostname }}:{{ ansible_host }} running {{ ansible_distribution }} {{ ansible_distribution_version }} is ready"
+
