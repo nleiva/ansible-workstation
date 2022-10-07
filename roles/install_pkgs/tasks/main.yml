@@ -11,3 +11,15 @@
   until: package_check is not failed
   retries: 4
   delay: 5
+
+- name: Install Déjà Dup Backups from flathub for current user
+  community.general.flatpak:
+    name: https://dl.flathub.org/repo/appstream/org.gnome.DejaDup.flatpakref
+    state: present
+    method: user
+
+- name: Install Python dependencies
+  ansible.builtin.pip:
+    name: "{{ python_libraries }}"
+    executable: pip3
+  become_user: "{{ ansible_user }}"

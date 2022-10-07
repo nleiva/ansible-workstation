@@ -1,4 +1,4 @@
-# ansible-playbook workstation.yml -K
+# ansible-playbook workstation.yml -vK -e "ansible_user=nleiva"
 
 - name: Setup Lab machines
   hosts: localhost
@@ -20,4 +20,3 @@
     - name: Finishing debug message
       ansible.builtin.debug:
         msg: "{{ inventory_hostname }}:{{ ansible_host }} running {{ ansible_distribution }} {{ ansible_distribution_version }} is ready"
-
