@@ -13,7 +13,6 @@ common_software:
 base_software:
   RedHat:
     - bind-utils
-    - chromium
     - gcc
     - libssh-devel
     - NetworkManager-openvpn
@@ -32,7 +31,7 @@ flathub_apps:
   - ca.desrt.dconf-editor
   - com.belmoussaoui.Obfuscate
   - com.github.PintaProject.Pinta
-  # - com.google.Chrome
+  - com.google.Chrome
   - com.mattjakeman.ExtensionManager
   - com.obsproject.Studio
   - com.slack.Slack
