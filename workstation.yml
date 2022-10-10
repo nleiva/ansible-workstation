@@ -1,4 +1,7 @@
+# python3 -m pip install --user ansible-core
 # ansible-playbook workstation.yml -vK -e "ansible_user=nleiva"
+# python3 -m pip show ansible-core
+
 
 - name: Setup Lab machines
   hosts: localhost
@@ -15,6 +18,7 @@
       become: true
     - role: install_pkgs
       become: true
+    - role: customize
 
   tasks:
     - name: Finishing debug message

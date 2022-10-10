@@ -1,2 +1,5 @@
 skip_list:  # or 'skip_list' to silence them completely
   - package-latest  # Package installs should not use latest.
+  - git-latest  # Git checkouts must contain explicit version.
+  - no-changed-when  # Commands should not change things if nothing needs doing.
+  - experimental  # all rules tagged as experimental

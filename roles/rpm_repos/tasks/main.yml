@@ -2,13 +2,13 @@
   ansible.builtin.yum_repository:
     name: vscode
     description: Visual Studio Code repo
-    baseurl: https://packages.microsoft.com/yumrepos/vscode
-    gpgkey: https://packages.microsoft.com/keys/microsoft.asc
+    baseurl: "{{ vscode_repo }}"
+    gpgkey: "{{ vscode_key }}"
     gpgcheck: true
 
 - name: Import EPEL GPG key
   ansible.builtin.rpm_key:
-    key: "https://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-{{ ansible_distribution_major_version }}"
+    key: "{{ epel_key }}"
     state: present
   register: result
   until: result is succeeded
@@ -18,9 +18,33 @@
 
 - name: Install EPEL repo
   ansible.builtin.yum:
-    name: "https://dl.fedoraproject.org/pub/epel/epel-release-latest-{{ ansible_distribution_major_version }}.noarch.rpm"
+    name: "{{ epel_repo }}"
     state: present
   register: result
   until: result is succeeded
   retries: 5
   delay: 10
+
+- name: Install Tailscale repo
+  ansible.builtin.get_url:
+    url: "{{ tailscale_repo }}"
+    dest: /etc/yum.repos.d/tailscale.repo
+  register: result
+  until: result is succeeded
+  retries: 3
+  delay: 5
+
+- name: Remove the flathub remote from the system installation
+  community.general.flatpak_remote:
+    name: flathub
+    state: absent
+    method: user
+  become: false
+
+- name: Add the Flathub flatpak repository remote to the user installation
+  community.general.flatpak_remote:
+    name: flathub
+    state: present
+    flatpakrepo_url: "{{ flathub }}"
+    method: user
+  become: false

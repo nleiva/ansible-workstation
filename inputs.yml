@@ -1,11 +1,11 @@
 common_software:
-  - ansible-core
   - code
   - git
   - htop
   # - protobuf-compiler
   - python3-pip
   - sshpass
+  - tailscale
   - tcpdump
   - tree
   - wget
@@ -18,10 +18,41 @@ base_software:
     - libssh-devel
     - NetworkManager-openvpn
     - python3-devel
+    - go-toolset
 
 python_libraries:
-  - ipaddress
-  - ansible-pylibssh
+  - ansible-core
+  - ansible-lint[yamllint]==6.3.0
   - ansible-navigator
-  - ansible-lint==6.3.0
+  - ansible-pylibssh
+  - ipaddress
   - resolvelib>=0.5.3,<0.6.0
+
+flathub_apps:
+  - ca.desrt.dconf-editor
+  - com.belmoussaoui.Obfuscate
+  - com.github.PintaProject.Pinta
+  # - com.google.Chrome
+  - com.mattjakeman.ExtensionManager
+  - com.obsproject.Studio
+  - com.slack.Slack
+  - io.posidon.Paper
+  - org.fedoraproject.MediaWriter
+  - org.gnome.DejaDup
+  - org.gnome.Logs
+  - org.gnome.TextEditor
+  - us.zoom.Zoom
+
+# Repositories
+epel_repo: "https://dl.fedoraproject.org/pub/epel/epel-release-latest-{{ ansible_distribution_major_version }}.noarch.rpm"
+epel_key: "https://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-{{ ansible_distribution_major_version }}"
+
+vscode_repo: https://packages.microsoft.com/yumrepos/vscode
+vscode_key: https://packages.microsoft.com/keys/microsoft.asc
+
+tailscale_repo: "https://pkgs.tailscale.com/stable/rhel/{{ ansible_distribution_major_version }}/tailscale.repo"
+
+flathub: https://flathub.org/repo/flathub.flatpakrepo
+
+dot_repo: https://github.com/nleiva/dotfiles.git
+dot_files_dst: ~/.dotfiles

@@ -12,14 +12,17 @@
   retries: 4
   delay: 5
 
-- name: Install Déjà Dup Backups from flathub for current user
+- name: Install apps from flathub for current user
   community.general.flatpak:
-    name: https://dl.flathub.org/repo/appstream/org.gnome.DejaDup.flatpakref
+    name: "{{ flathub_apps }}"
     state: present
     method: user
+    remote: flathub
+  become: false
 
-- name: Install Python dependencies
+- name: Install Python dependencies within a user home directory
   ansible.builtin.pip:
     name: "{{ python_libraries }}"
     executable: pip3
-  become_user: "{{ ansible_user }}"
+    extra_args: --user
+  become: false
