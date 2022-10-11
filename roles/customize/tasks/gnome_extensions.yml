@@ -1,0 +1,15 @@
+- name: Get GNOME Shell version
+  ansible.builtin.shell:
+    cmd: gnome-shell --version | awk '{printf "%2d", $3}'
+  register: g_version
+  changed_when: false
+
+- name: Parse GNOME Shell version
+  ansible.builtin.set_fact:
+    gnome_shell_version: "{{ g_version.stdout }}"
+
+- name: Loop over GNOME Extensions
+  ansible.builtin.include_tasks: "install_extension.yml"
+  loop: "{{ gnome_extensions }}"
+  loop_control:
+    loop_var: extension

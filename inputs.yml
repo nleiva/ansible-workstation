@@ -1,14 +1,17 @@
 common_software:
   - code
+# - ffmpeg
   - git
   - htop
-  # - protobuf-compiler
+# - protobuf-compiler
   - python3-pip
   - sshpass
   - tailscale
   - tcpdump
   - tree
+  - unzip
   - wget
+
 
 base_software:
   RedHat:
@@ -43,8 +46,15 @@ flathub_apps:
   - us.zoom.Zoom
 
 # Repositories
+rhel_repos:
+  - "codeready-builder-for-rhel-{{ ansible_distribution_major_version }}-x86_64-rpms"
+  - "ansible-automation-platform-2.2-for-rhel-{{ ansible_distribution_major_version }}-x86_64-rpms"
+
 epel_repo: "https://dl.fedoraproject.org/pub/epel/epel-release-latest-{{ ansible_distribution_major_version }}.noarch.rpm"
 epel_key: "https://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-{{ ansible_distribution_major_version }}"
+
+# https://rpmfusion.org/
+# rpmfusion_repo: "https://mirrors.rpmfusion.org/free/el/rpmfusion-free-release-{{ ansible_distribution_major_version }}.noarch.rpm"
 
 vscode_repo: https://packages.microsoft.com/yumrepos/vscode
 vscode_key: https://packages.microsoft.com/keys/microsoft.asc
@@ -52,6 +62,11 @@ vscode_key: https://packages.microsoft.com/keys/microsoft.asc
 tailscale_repo: "https://pkgs.tailscale.com/stable/rhel/{{ ansible_distribution_major_version }}/tailscale.repo"
 
 flathub: https://flathub.org/repo/flathub.flatpakrepo
+
+gnome_extensions:
+  - clipboard-indicator@tudmotu.com
+  - Resource_Monitor@Ory0n
+  - top-bar-organizer@julian.gse.jsts.xyz
 
 dot_repo: https://github.com/nleiva/dotfiles.git
 dot_files_dst: ~/.dotfiles

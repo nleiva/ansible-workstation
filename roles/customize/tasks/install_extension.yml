@@ -1,0 +1,41 @@
+- name: Check if GNOME Shell extension is already installed - {{ extension }}
+  ansible.builtin.stat:
+    path: "/home/{{ ansible_user }}/.local/share/gnome-shell/extensions/{{ extension }}/metadata.json"
+  register: extension_meta
+  become: false
+
+- name: Install {{ extension }}
+  block:
+    - name: Get GNOME Shell extension info - {{ extension }}
+      ansible.builtin.uri:
+        url: "https://extensions.gnome.org/extension-info/?uuid={{ extension }}&shell_version={{ gnome_shell_version }}"
+        return_content: true
+      register: extension_metadata
+
+    - name: Download GNOME Shell extension - {{ extension }}
+      ansible.builtin.get_url:
+        url: https://extensions.gnome.org{{ extension_metadata.json.download_url }}
+        dest: "/tmp/{{ extension }}.zip"
+
+    - name: Create installation directory - {{ extension }}
+      ansible.builtin.file:
+        path: "/home/{{ ansible_user }}/.local/share/gnome-shell/extensions/{{ extension }}"
+        state: directory
+        mode: 0775
+
+    - name: Install Gnome Shell extension - {{ extension }}
+      ansible.builtin.unarchive:
+        src: "/tmp/{{ extension }}.zip"
+        dest: "/home/{{ ansible_user }}/.local/share/gnome-shell/extensions/{{ extension }}"
+        remote_src: true
+
+    - name: Enable Gnome Shell extension - {{ extension }}
+      ansible.builtin.command: "gnome-shell-extension-tool --enable-extension {{ extension }}"
+
+    - name: Delete temporary file - {{ extension }}
+      ansible.builtin.file:
+        path: "/tmp/{{ extension }}.zip"
+        state: absent
+      changed_when: false
+  become: false
+  when: extension_meta.stat.exists is false

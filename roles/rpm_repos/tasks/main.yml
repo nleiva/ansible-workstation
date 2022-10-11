@@ -25,6 +25,20 @@
   retries: 5
   delay: 10
 
+# - name: Install RPM Fusion repo
+#   ansible.builtin.yum:
+#     name: "{{ rpmfusion_repo }}"
+#     state: present
+#   register: result
+#   until: result is succeeded
+#   retries: 5
+#   delay: 10
+
+- name: Enable additonal RHEL repositories
+  community.general.rhsm_repository:
+    name: "{{ rhel_repos }}"
+    state: enabled
+
 - name: Install Tailscale repo
   ansible.builtin.get_url:
     url: "{{ tailscale_repo }}"
