@@ -1,0 +1,15 @@
+# Checks YAML syntax of playbooks, etc.
+name: Ansible Lint
+
+# Controls when the workflow will run
+on: [push, pull_request, workflow_dispatch]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Lint Ansible Playbook
+        uses: ansible/ansible-lint-action@v6.3.0
