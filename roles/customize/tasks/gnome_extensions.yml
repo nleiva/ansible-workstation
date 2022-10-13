@@ -9,7 +9,16 @@
     gnome_shell_version: "{{ g_version.stdout }}"
 
 - name: Loop over GNOME Extensions
-  ansible.builtin.include_tasks: "install_extension.yml"
+  ansible.builtin.include_tasks: install_extension.yml
   loop: "{{ gnome_extensions }}"
   loop_control:
     loop_var: extension
+
+- name: Enable GNOME Extensions on dconf
+  community.general.dconf:
+    key: /org/gnome/gnome/enabled-extensions
+    value: "{{ gnome_extensions }}"
+    state: present
+
+- name: Configure GNOME Extensions
+  ansible.builtin.include_tasks: gnome_config.yml

@@ -54,7 +54,7 @@ epel_repo: "https://dl.fedoraproject.org/pub/epel/epel-release-latest-{{ ansible
 epel_key: "https://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-{{ ansible_distribution_major_version }}"
 
 # https://rpmfusion.org/
-# rpmfusion_repo: "https://mirrors.rpmfusion.org/free/el/rpmfusion-free-release-{{ ansible_distribution_major_version }}.noarch.rpm"
+rpmfusion_repo: "https://mirrors.rpmfusion.org/free/el/rpmfusion-free-release-{{ ansible_distribution_major_version }}.noarch.rpm"
 
 vscode_repo: https://packages.microsoft.com/yumrepos/vscode
 vscode_key: https://packages.microsoft.com/keys/microsoft.asc
@@ -70,3 +70,14 @@ gnome_extensions:
 
 dot_repo: https://github.com/nleiva/dotfiles.git
 dot_files_dst: ~/.dotfiles
+
+right_box_menu:
+  - clipboardIndicator
+  - dateMenu
+  # - dwellClick # https://help.gnome.org/users/gnome-help/stable/a11y-dwellclick.html.en
+  # - a11y # accessibility
+  - keyboard
+  - aggregateMenu
+
+center_box_menu:
+  - Resource_Monitor@Ory0n

@@ -1,21 +1,31 @@
-- name: Setup Lab machines
+- name: Prepare my workstation after OS (RHEL9) installation
   hosts: localhost
   gather_facts: true
+  become: true
   vars_files: inputs.yml
 
-  pre_tasks:
+  tasks:
     - name: Starting debug message
       ansible.builtin.debug:
         msg: "It will start working on {{ inventory_hostname }}:{{ ansible_host }}"
+      tags: rhel_repo
 
-  roles:
-    - role: rpm_repos
-      become: true
-    - role: install_pkgs
-      become: true
-    - role: customize
+    - name: RPM Repositories role
+      ansible.builtin.include_role:
+        name: rpm_repos
+      tags: [default_repos]
 
-  tasks:
-    - name: Finishing debug message
-      ansible.builtin.debug:
-        msg: "{{ inventory_hostname }}:{{ ansible_host }} running {{ ansible_distribution }} {{ ansible_distribution_version }} is ready"
+    - name: Install packages role
+      ansible.builtin.include_role:
+        name: install_pkgs
+
+    - name: Final details
+      block:
+        - name: Customize environment role
+          ansible.builtin.include_role:
+            name: customize
+
+        - name: Finishing debug message
+          ansible.builtin.debug:
+            msg: "{{ inventory_hostname }}:{{ ansible_host }} running {{ ansible_distribution }} {{ ansible_distribution_version }} is ready"
+      become: false

@@ -8,11 +8,8 @@
 - name: Install dot files
   ansible.builtin.command: "{{ dot_files_dst }}/install.sh"
 
-# - name: Disable desktop effects in Cinnamon
-#   community.general.dconf:
-#     key: "/org/cinnamon/desktop-effects"
-#     value: "false"
-#     state: present
-
 - name: Install GNOME Extensions
   ansible.builtin.include_tasks: gnome_extensions.yml
+
+- name: Config GNOME Extensions
+  ansible.builtin.include_tasks: gnome_config.yml

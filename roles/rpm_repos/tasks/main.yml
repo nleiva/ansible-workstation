@@ -5,6 +5,7 @@
     baseurl: "{{ vscode_repo }}"
     gpgkey: "{{ vscode_key }}"
     gpgcheck: true
+  tags: default_repos
 
 - name: Import EPEL GPG key
   ansible.builtin.rpm_key:
@@ -15,6 +16,7 @@
   retries: 5
   delay: 10
   ignore_errors: "{{ ansible_check_mode }}"
+  tags: default_repos
 
 - name: Install EPEL repo
   ansible.builtin.yum:
@@ -24,20 +26,23 @@
   until: result is succeeded
   retries: 5
   delay: 10
+  tags: default_repos
 
-# - name: Install RPM Fusion repo
-#   ansible.builtin.yum:
-#     name: "{{ rpmfusion_repo }}"
-#     state: present
-#   register: result
-#   until: result is succeeded
-#   retries: 5
-#   delay: 10
+- name: Install RPM Fusion repo
+  ansible.builtin.yum:
+    name: "{{ rpmfusion_repo }}"
+    state: present
+  register: result
+  until: result is succeeded
+  retries: 5
+  delay: 10
+  tags: fusion_repo
 
 - name: Enable additonal RHEL repositories
   community.general.rhsm_repository:
     name: "{{ rhel_repos }}"
     state: enabled
+  tags: rhel_repo
 
 - name: Install Tailscale repo
   ansible.builtin.get_url:
@@ -54,6 +59,7 @@
     state: absent
     method: user
   become: false
+  tags: default_repos
 
 - name: Add the Flathub flatpak repository remote to the user installation
   community.general.flatpak_remote:
@@ -62,3 +68,4 @@
     flatpakrepo_url: "{{ flathub }}"
     method: user
   become: false
+  tags: default_repos

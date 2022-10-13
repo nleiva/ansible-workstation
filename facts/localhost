@@ -17,15 +17,15 @@
     "ansible_bios_version": "N2HET57W (1.40 )",
     "ansible_board_asset_tag": "Not Available",
     "ansible_board_name": "20QES2P400",
-    "ansible_board_serial": "NA",
+    "ansible_board_serial": "L1HF9BN06B2",
     "ansible_board_vendor": "LENOVO",
     "ansible_board_version": "Not Defined",
     "ansible_chassis_asset_tag": "No Asset Information",
-    "ansible_chassis_serial": "NA",
+    "ansible_chassis_serial": "PF21AQ0B",
     "ansible_chassis_vendor": "LENOVO",
     "ansible_chassis_version": "None",
     "ansible_cmdline": {
-        "BOOT_IMAGE": "(hd1,gpt2)/vmlinuz-5.14.0-70.26.1.el9_0.x86_64",
+        "BOOT_IMAGE": "(hd0,gpt2)/vmlinuz-5.14.0-70.26.1.el9_0.x86_64",
         "crashkernel": "1G-4G:192M,4G-64G:256M,64G-:512M",
         "quiet": true,
         "rd.lvm.lv": "rhel_x1/swap",
@@ -35,24 +35,24 @@
         "root": "/dev/mapper/rhel_x1-root"
     },
     "ansible_date_time": {
-        "date": "2022-10-11",
-        "day": "11",
-        "epoch": "1665523165",
-        "epoch_int": "1665523165",
-        "hour": "17",
-        "iso8601": "2022-10-11T21:19:25Z",
-        "iso8601_basic": "20221011T171925952098",
-        "iso8601_basic_short": "20221011T171925",
-        "iso8601_micro": "2022-10-11T21:19:25.952098Z",
+        "date": "2022-10-13",
+        "day": "13",
+        "epoch": "1665685186",
+        "epoch_int": "1665685186",
+        "hour": "14",
+        "iso8601": "2022-10-13T18:19:46Z",
+        "iso8601_basic": "20221013T141946254050",
+        "iso8601_basic_short": "20221013T141946",
+        "iso8601_micro": "2022-10-13T18:19:46.254050Z",
         "minute": "19",
         "month": "10",
-        "second": "25",
-        "time": "17:19:25",
+        "second": "46",
+        "time": "14:19:46",
         "tz": "EDT",
         "tz_dst": "EDT",
         "tz_offset": "-0400",
-        "weekday": "Tuesday",
-        "weekday_number": "2",
+        "weekday": "Thursday",
+        "weekday_number": "4",
         "weeknumber": "41",
         "year": "2022"
     },
@@ -102,12 +102,12 @@
                 "dm-uuid-LVM-pyQ2VbeL2t2jf4THw6yxRgmZXZewKjr4MAZq72kT0LWxenEF9DrJw5NudYtLOfDB"
             ],
             "dm-5": [
-                "dm-name-luks-a0344951-00f0-453a-a8af-d3798885ef55",
-                "dm-uuid-CRYPT-LUKS2-a034495100f0453aa8afd3798885ef55-luks-a0344951-00f0-453a-a8af-d3798885ef55"
-            ],
-            "dm-6": [
                 "dm-name-luks-a3958a4a-b5e3-493f-97f8-f0cee511cf5a",
                 "dm-uuid-CRYPT-LUKS2-a3958a4ab5e3493f97f8f0cee511cf5a-luks-a3958a4a-b5e3-493f-97f8-f0cee511cf5a"
+            ],
+            "dm-6": [
+                "dm-name-luks-a0344951-00f0-453a-a8af-d3798885ef55",
+                "dm-uuid-CRYPT-LUKS2-a034495100f0453aa8afd3798885ef55-luks-a0344951-00f0-453a-a8af-d3798885ef55"
             ],
             "dm-7": [
                 "dm-name-luks-8769d031-a025-4315-8b04-29a8945eab95",
@@ -134,13 +134,13 @@
         "labels": {},
         "masters": {
             "dm-2": [
-                "dm-5"
+                "dm-6"
             ],
             "dm-3": [
                 "dm-7"
             ],
             "dm-4": [
-                "dm-6"
+                "dm-5"
             ],
             "nvme0n1p3": [
                 "dm-0",
@@ -167,10 +167,10 @@
                 "a3958a4a-b5e3-493f-97f8-f0cee511cf5a"
             ],
             "dm-5": [
-                "17883c3c-d74a-4548-bf97-f15dd29774a9"
+                "069d1905-115c-4cec-b46b-af61483536ad"
             ],
             "dm-6": [
-                "069d1905-115c-4cec-b46b-af61483536ad"
+                "17883c3c-d74a-4548-bf97-f15dd29774a9"
             ],
             "dm-7": [
                 "211c9c0b-239f-4979-b05c-57e8f8609a9b"
@@ -252,7 +252,7 @@
                 ],
                 "labels": [],
                 "masters": [
-                    "dm-5"
+                    "dm-6"
                 ],
                 "uuids": [
                     "a0344951-00f0-453a-a8af-d3798885ef55"
@@ -316,7 +316,7 @@
                 ],
                 "labels": [],
                 "masters": [
-                    "dm-6"
+                    "dm-5"
                 ],
                 "uuids": [
                     "a3958a4a-b5e3-493f-97f8-f0cee511cf5a"
@@ -341,13 +341,13 @@
             "host": "",
             "links": {
                 "ids": [
-                    "dm-name-luks-a0344951-00f0-453a-a8af-d3798885ef55",
-                    "dm-uuid-CRYPT-LUKS2-a034495100f0453aa8afd3798885ef55-luks-a0344951-00f0-453a-a8af-d3798885ef55"
+                    "dm-name-luks-a3958a4a-b5e3-493f-97f8-f0cee511cf5a",
+                    "dm-uuid-CRYPT-LUKS2-a3958a4ab5e3493f97f8f0cee511cf5a-luks-a3958a4a-b5e3-493f-97f8-f0cee511cf5a"
                 ],
                 "labels": [],
                 "masters": [],
                 "uuids": [
-                    "17883c3c-d74a-4548-bf97-f15dd29774a9"
+                    "069d1905-115c-4cec-b46b-af61483536ad"
                 ]
             },
             "model": null,
@@ -369,13 +369,13 @@
             "host": "",
             "links": {
                 "ids": [
-                    "dm-name-luks-a3958a4a-b5e3-493f-97f8-f0cee511cf5a",
-                    "dm-uuid-CRYPT-LUKS2-a3958a4ab5e3493f97f8f0cee511cf5a-luks-a3958a4a-b5e3-493f-97f8-f0cee511cf5a"
+                    "dm-name-luks-a0344951-00f0-453a-a8af-d3798885ef55",
+                    "dm-uuid-CRYPT-LUKS2-a034495100f0453aa8afd3798885ef55-luks-a0344951-00f0-453a-a8af-d3798885ef55"
                 ],
                 "labels": [],
                 "masters": [],
                 "uuids": [
-                    "069d1905-115c-4cec-b46b-af61483536ad"
+                    "17883c3c-d74a-4548-bf97-f15dd29774a9"
                 ]
             },
             "model": null,
@@ -510,6 +510,7 @@
             "scheduler_mode": "none",
             "sectors": "500118192",
             "sectorsize": "512",
+            "serial": "193795806518",
             "size": "238.47 GB",
             "support_discard": "512",
             "vendor": null,
@@ -537,8 +538,8 @@
         ]
     },
     "ansible_domain": "office.home",
-    "ansible_effective_group_id": 1000,
-    "ansible_effective_user_id": 1000,
+    "ansible_effective_group_id": 0,
+    "ansible_effective_user_id": 0,
     "ansible_enp0s20f0u3u1u1": {
         "active": true,
         "device": "enp0s20f0u3u1u1",
@@ -725,53 +726,28 @@
         "type": "ether"
     },
     "ansible_env": {
-        "BASH_FUNC_which%%": "() {  ( alias;\n eval ${which_declare} ) | /usr/bin/which --tty-only --read-alias --read-functions --show-tilde --show-dot \"$@\"\n}",
         "COLORTERM": "truecolor",
-        "DBUS_SESSION_BUS_ADDRESS": "unix:path=/run/user/1000/bus",
-        "DESKTOP_SESSION": "gnome",
         "DISPLAY": ":0",
-        "GDMSESSION": "gnome",
-        "GDM_LANG": "en_US.UTF-8",
-        "GIT_PS1_SHOWDIRTYSTATE": "true",
-        "GIT_PS1_SHOWUNTRACKEDFILES": "true",
-        "GNOME_SETUP_DISPLAY": ":1",
-        "GNOME_TERMINAL_SCREEN": "/org/gnome/Terminal/screen/b57ec20f_b816_4a6c_b68b_4bffc97339b9",
-        "GNOME_TERMINAL_SERVICE": ":1.4577",
-        "HISTCONTROL": "ignoredups",
         "HISTSIZE": "1000",
-        "HOME": "/home/nleiva",
+        "HOME": "/root",
         "HOSTNAME": "x1.office.home",
         "LANG": "en_US.UTF-8",
-        "LESSOPEN": "||/usr/bin/lesspipe.sh %s",
-        "LOGNAME": "nleiva",
+        "LOGNAME": "root",
         "LS_COLORS": "rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=01;37;41:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=01;36:*.au=01;36:*.flac=01;36:*.m4a=01;36:*.mid=01;36:*.midi=01;36:*.mka=01;36:*.mp3=01;36:*.mpc=01;36:*.ogg=01;36:*.ra=01;36:*.wav=01;36:*.oga=01;36:*.opus=01;36:*.spx=01;36:*.xspf=01;36:",
         "MAIL": "/var/spool/mail/nleiva",
-        "OLDPWD": "/home/nleiva",
-        "PATH": "/home/nleiva/.local/bin:/home/nleiva/bin:/home/nleiva/.local/bin:/home/nleiva/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/usr/local/go/bin:/home/nleiva/go/bin:/home/nleiva/.cargo/bin",
+        "PATH": "/sbin:/bin:/usr/sbin:/usr/bin",
         "PWD": "/home/nleiva/projects/workstation",
-        "QT_IM_MODULE": "ibus",
-        "SESSION_MANAGER": "local/unix:@/tmp/.ICE-unix/7261,unix/unix:/tmp/.ICE-unix/7261",
         "SHELL": "/bin/bash",
-        "SHLVL": "2",
-        "SSH_AUTH_SOCK": "/run/user/1000/keyring/ssh",
-        "SYSTEMD_EXEC_PID": "7297",
+        "SHLVL": "0",
+        "SUDO_COMMAND": "/bin/sh -c echo BECOME-SUCCESS-lawpyacliivepoqwbuisbszzuckmodkd ; /usr/bin/python3 /home/nleiva/.ansible/tmp/ansible-tmp-1665685182.4233656-88252-42675997192843/AnsiballZ_setup.py",
+        "SUDO_GID": "1000",
+        "SUDO_UID": "1000",
+        "SUDO_USER": "nleiva",
         "TERM": "xterm-256color",
-        "TMOUT": "900",
-        "USER": "nleiva",
+        "USER": "root",
         "USERNAME": "nleiva",
-        "VTE_VERSION": "6402",
-        "WAYLAND_DISPLAY": "wayland-0",
-        "XAUTHORITY": "/run/user/1000/.mutter-Xwaylandauth.NIUKT1",
-        "XDG_CURRENT_DESKTOP": "GNOME",
-        "XDG_DATA_DIRS": "/home/nleiva/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share/:/usr/share/",
-        "XDG_MENU_PREFIX": "gnome-",
-        "XDG_RUNTIME_DIR": "/run/user/1000",
-        "XDG_SESSION_CLASS": "user",
-        "XDG_SESSION_DESKTOP": "gnome",
-        "XDG_SESSION_TYPE": "wayland",
-        "XMODIFIERS": "@im=ibus",
-        "_": "/usr/bin/python3",
-        "which_declare": "declare -f"
+        "XAUTHORITY": "/run/user/1000/.mutter-Xwaylandauth.JDX5T1",
+        "_": "/usr/bin/python3"
     },
     "ansible_fibre_channel_wwn": [],
     "ansible_fips": false,
@@ -780,10 +756,10 @@
     "ansible_hostname": "x1",
     "ansible_hostnqn": "nqn.2014-08.org.nvmexpress:uuid:61962ecc-33df-11b2-a85c-a7257f09af22",
     "ansible_interfaces": [
-        "wlp0s20f3",
+        "enp0s20f0u3u1u1",
         "enp0s31f6",
         "lo",
-        "enp0s20f0u3u1u1"
+        "wlp0s20f3"
     ],
     "ansible_is_chroot": false,
     "ansible_iscsi_iqn": "",
@@ -881,41 +857,80 @@
     },
     "ansible_local": {},
     "ansible_lsb": {},
+    "ansible_lvm": {
+        "lvs": {
+            "home": {
+                "size_g": "160.00",
+                "vg": "rhel_x1"
+            },
+            "root": {
+                "size_g": "38.00",
+                "vg": "rhel_x1"
+            },
+            "swap": {
+                "size_g": "16.00",
+                "vg": "rhel_x1"
+            },
+            "tmp": {
+                "size_g": "10.00",
+                "vg": "rhel_x1"
+            },
+            "var_tmp": {
+                "size_g": "10.00",
+                "vg": "rhel_x1"
+            }
+        },
+        "pvs": {
+            "/dev/nvme0n1p3": {
+                "free_g": "0.00",
+                "size_g": "234.00",
+                "vg": "rhel_x1"
+            }
+        },
+        "vgs": {
+            "rhel_x1": {
+                "free_g": "0.00",
+                "num_lvs": "5",
+                "num_pvs": "1",
+                "size_g": "234.00"
+            }
+        }
+    },
     "ansible_machine": "x86_64",
     "ansible_machine_id": "c31734d73e1248a6aa79d3a0ca4310a1",
-    "ansible_memfree_mb": 864,
+    "ansible_memfree_mb": 1348,
     "ansible_memory_mb": {
         "nocache": {
-            "free": 6761,
-            "used": 8637
+            "free": 7601,
+            "used": 7797
         },
         "real": {
-            "free": 864,
+            "free": 1348,
             "total": 15398,
-            "used": 14534
+            "used": 14050
         },
         "swap": {
-            "cached": 8,
-            "free": 16111,
+            "cached": 1,
+            "free": 16373,
             "total": 16383,
-            "used": 272
+            "used": 10
         }
     },
     "ansible_memtotal_mb": 15398,
     "ansible_mounts": [
         {
-            "block_available": 7532565,
+            "block_available": 7569704,
             "block_size": 4096,
             "block_total": 9956608,
-            "block_used": 2424043,
+            "block_used": 2386904,
             "device": "/dev/mapper/rhel_x1-root",
             "fstype": "xfs",
-            "inode_available": 19693760,
+            "inode_available": 19693737,
             "inode_total": 19922944,
-            "inode_used": 229184,
+            "inode_used": 229207,
             "mount": "/",
             "options": "rw,seclabel,relatime,attr2,inode64,logbufs=8,logbsize=32k,noquota",
-            "size_available": 30853386240,
+            "size_available": 31005507584,
             "size_total": 40782266368,
             "uuid": "4f214a62-adb5-4903-9b3a-03fa9396c486"
         },
@@ -952,26 +967,10 @@
             "uuid": "9DF4-D202"
         },
         {
-            "block_available": 2587373,
+            "block_available": 2573419,
             "block_size": 4096,
             "block_total": 2614784,
-            "block_used": 27411,
-            "device": "/dev/mapper/luks-a0344951-00f0-453a-a8af-d3798885ef55",
-            "fstype": "xfs",
-            "inode_available": 5234620,
-            "inode_total": 5234688,
-            "inode_used": 68,
-            "mount": "/tmp",
-            "options": "rw,seclabel,nosuid,nodev,noexec,relatime,attr2,inode64,logbufs=8,logbsize=32k,noquota",
-            "size_available": 10597879808,
-            "size_total": 10710155264,
-            "uuid": "17883c3c-d74a-4548-bf97-f15dd29774a9"
-        },
-        {
-            "block_available": 2573411,
-            "block_size": 4096,
-            "block_total": 2614784,
-            "block_used": 41373,
+            "block_used": 41365,
             "device": "/dev/mapper/luks-a3958a4a-b5e3-493f-97f8-f0cee511cf5a",
             "fstype": "xfs",
             "inode_available": 5234600,
@@ -979,23 +978,39 @@
             "inode_used": 88,
             "mount": "/var/tmp",
             "options": "rw,seclabel,nosuid,nodev,noexec,relatime,attr2,inode64,logbufs=8,logbsize=32k,noquota",
-            "size_available": 10540691456,
+            "size_available": 10540724224,
             "size_total": 10710155264,
             "uuid": "069d1905-115c-4cec-b46b-af61483536ad"
         },
         {
-            "block_available": 37141363,
+            "block_available": 2587379,
+            "block_size": 4096,
+            "block_total": 2614784,
+            "block_used": 27405,
+            "device": "/dev/mapper/luks-a0344951-00f0-453a-a8af-d3798885ef55",
+            "fstype": "xfs",
+            "inode_available": 5234622,
+            "inode_total": 5234688,
+            "inode_used": 66,
+            "mount": "/tmp",
+            "options": "rw,seclabel,nosuid,nodev,noexec,relatime,attr2,inode64,logbufs=8,logbsize=32k,noquota",
+            "size_available": 10597904384,
+            "size_total": 10710155264,
+            "uuid": "17883c3c-d74a-4548-bf97-f15dd29774a9"
+        },
+        {
+            "block_available": 36953681,
             "block_size": 4096,
             "block_total": 41918466,
-            "block_used": 4777103,
+            "block_used": 4964785,
             "device": "/dev/mapper/luks-8769d031-a025-4315-8b04-29a8945eab95",
             "fstype": "xfs",
-            "inode_available": 83677687,
+            "inode_available": 83681709,
             "inode_total": 83877888,
-            "inode_used": 200201,
+            "inode_used": 196179,
             "mount": "/home",
             "options": "rw,seclabel,nosuid,nodev,relatime,attr2,inode64,logbufs=8,logbsize=32k,noquota",
-            "size_available": 152131022848,
+            "size_available": 151362277376,
             "size_total": 171698036736,
             "uuid": "211c9c0b-239f-4979-b05c-57e8f8609a9b"
         }
@@ -1004,7 +1019,7 @@
     "ansible_os_family": "RedHat",
     "ansible_pkg_mgr": "dnf",
     "ansible_proc_cmdline": {
-        "BOOT_IMAGE": "(hd1,gpt2)/vmlinuz-5.14.0-70.26.1.el9_0.x86_64",
+        "BOOT_IMAGE": "(hd0,gpt2)/vmlinuz-5.14.0-70.26.1.el9_0.x86_64",
         "crashkernel": "1G-4G:192M,4G-64G:256M,64G-:512M",
         "quiet": true,
         "rd.lvm.lv": [
@@ -1048,8 +1063,8 @@
     "ansible_processor_threads_per_core": 2,
     "ansible_processor_vcpus": 8,
     "ansible_product_name": "20QES2P400",
-    "ansible_product_serial": "NA",
-    "ansible_product_uuid": "NA",
+    "ansible_product_serial": "PF21AQ0B",
+    "ansible_product_uuid": "61962ecc-33df-11b2-a85c-a7257f09af22",
     "ansible_product_version": "ThinkPad X1 Carbon 7th",
     "ansible_python": {
         "executable": "/usr/bin/python3",
@@ -1071,8 +1086,8 @@
         ]
     },
     "ansible_python_version": "3.9.10",
-    "ansible_real_group_id": 1000,
-    "ansible_real_user_id": 1000,
+    "ansible_real_group_id": 0,
+    "ansible_real_user_id": 0,
     "ansible_selinux": {
         "config_mode": "enforcing",
         "mode": "enforcing",
@@ -1088,21 +1103,19 @@
     "ansible_ssh_host_key_ed25519_public_keytype": "ssh-ed25519",
     "ansible_ssh_host_key_rsa_public": "AAAAB3NzaC1yc2EAAAADAQABAAABgQCtqgZNOpOgDi6dazy1CF8xvSOaPNHaIgEVIqr166CyFKK8wEA4t4OUDhp8HTJQS1IluolJ8QrCoqYY/K4DYqEEWFhI/oMVirj/JdUHGEjBlodr2TmQ/IG3Ogu44A35lsMSOKkmBY1j1e/HaBde7loe6xOjsOq9seV7Y+hJE/GGL23FO9GKVAGpVEgxdUJNt7py3pksDcQKTkEd2UKunSEnZNI6cOdsQtoC8XQHJQoOS4RogLL35UYhWjGjnx8CpyJfdIERgrlXItZ+leEhYdaohZLNyAOurQCE0FfniY/WDNsXNnvUBxfWYKqeKutIQs5zTKfaAT5w74QGSJb+7e3iJftPFdIMXvNTSGsYHxFtE13LqDaTdfgH13xxdwyK+kgvsyx4l21k9MpLjJfSMwgI83rJCikHCWwIquktDyqAYEa09nWmB56r2OrBAatwwr0k68dclvFKJhmi4rrs8R7WH1xYzSpCfn2mAbpOlhNsDIE7q/S32IB9IJRO8sWUgcE=",
     "ansible_ssh_host_key_rsa_public_keytype": "ssh-rsa",
-    "ansible_swapfree_mb": 16111,
+    "ansible_swapfree_mb": 16373,
     "ansible_swaptotal_mb": 16383,
     "ansible_system": "Linux",
-    "ansible_system_capabilities": [
-        ""
-    ],
-    "ansible_system_capabilities_enforced": "True",
+    "ansible_system_capabilities": [],
+    "ansible_system_capabilities_enforced": "False",
     "ansible_system_vendor": "LENOVO",
-    "ansible_uptime_seconds": 454953,
-    "ansible_user_dir": "/home/nleiva",
-    "ansible_user_gecos": "Nicolas Leiva",
-    "ansible_user_gid": 1000,
-    "ansible_user_id": "nleiva",
+    "ansible_uptime_seconds": 90518,
+    "ansible_user_dir": "/root",
+    "ansible_user_gecos": "root",
+    "ansible_user_gid": 0,
+    "ansible_user_id": "root",
     "ansible_user_shell": "/bin/bash",
-    "ansible_user_uid": 1000,
+    "ansible_user_uid": 0,
     "ansible_userspace_architecture": "x86_64",
     "ansible_userspace_bits": "64",
     "ansible_virtualization_role": "host",
@@ -1182,7 +1195,7 @@
             "vlan_challenged": "off [fixed]"
         },
         "hw_timestamp_filters": [],
-        "macaddress": "1e:98:45:c0:20:56",
+        "macaddress": "32:be:ee:6b:be:0b",
         "module": "iwlwifi",
         "mtu": 1500,
         "pciid": "0000:00:14.3",

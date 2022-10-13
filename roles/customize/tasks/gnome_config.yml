@@ -1,0 +1,11 @@
+- name: Enable GNOME Extensions on dconf
+  community.general.dconf:
+    key: "/org/gnome/gnome/top-bar-organizer/right-box-order"
+    value: "{{ right_box_menu }}"
+    state: present
+
+- name: Enable GNOME Extensions on dconf
+  community.general.dconf:
+    key: "/org/gnome/gnome/top-bar-organizer/center-box-order"
+    value: "{{ center_box_menu }}"
+    state: present

@@ -2,7 +2,6 @@
   ansible.builtin.stat:
     path: "/home/{{ ansible_user }}/.local/share/gnome-shell/extensions/{{ extension }}/metadata.json"
   register: extension_meta
-  become: false
 
 - name: Install {{ extension }}
   block:
@@ -37,5 +36,4 @@
         path: "/tmp/{{ extension }}.zip"
         state: absent
       changed_when: false
-  become: false
   when: extension_meta.stat.exists is false
