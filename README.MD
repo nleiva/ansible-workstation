@@ -1,4 +1,5 @@
 # My workstation
+[![Ansible Lint](https://github.com/nleiva/ansible-workstation/actions/workflows/ansible_lint.yml/badge.svg)](https://github.com/nleiva/ansible-workstation/actions/workflows/ansible_lint.yml)
 
 I run RHEL9, which you can [get for free](https://developers.redhat.com/articles/faqs-no-cost-red-hat-enterprise-linux#general).
 
