@@ -1,12 +1,15 @@
 common_software:
+  - cargo
   - code
   - flatpak
 # - ffmpeg
   - git
   - gnome-tweaks
   - htop
+  - krb5-workstation
 # - protobuf-compiler
   - python3-pip
+  - rust
   - sshpass
   - tailscale
   - tcpdump

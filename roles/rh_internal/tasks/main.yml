@@ -14,3 +14,6 @@
       - redhat-internal-cert-install
       - redhat-internal-yubikey
   ignore_errors: true
+
+- name: Configure IdM and automate Kerberos tickets
+  ansible.builtin.include_tasks: kerberos.yml
