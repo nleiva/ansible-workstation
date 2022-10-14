@@ -19,6 +19,10 @@
       ansible.builtin.include_role:
         name: install_pkgs
 
+    - name: Install Reh Hat internal stuff
+      ansible.builtin.include_role:
+        name: rh_internal
+
     - name: Final details
       block:
         - name: Customize environment role

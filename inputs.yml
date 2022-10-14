@@ -1,7 +1,9 @@
 common_software:
   - code
+  - flatpak
 # - ffmpeg
   - git
+  - gnome-tweaks
   - htop
 # - protobuf-compiler
   - python3-pip
@@ -43,6 +45,7 @@ flathub_apps:
   - org.gnome.DejaDup
   - org.gnome.Logs
   - org.gnome.TextEditor
+  - org.wireshark.Wireshark
   - us.zoom.Zoom
 
 # Repositories

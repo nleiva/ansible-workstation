@@ -1,0 +1,16 @@
+- name: Setup CSB Repo
+  ansible.builtin.template:
+    src: rhel8-csb.repo.j2
+    dest: /etc/yum.repos.d/rhel8-csb.repo
+
+- name: Package Install - CSB RHEL8
+  ansible.builtin.yum:
+    state: present
+    name:
+      - redhat-internal-openvpn-profiles
+      - redhat-internal-NetworkManager-openvpn-profiles
+      - redhat-internal-NetworkManager-openvpn-profiles-non-gnome
+      - redhat-internal-wireless-config
+      - redhat-internal-cert-install
+      - redhat-internal-yubikey
+  ignore_errors: yes
