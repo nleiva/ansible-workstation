@@ -13,4 +13,4 @@
       - redhat-internal-wireless-config
       - redhat-internal-cert-install
       - redhat-internal-yubikey
-  ignore_errors: yes
+  ignore_errors: true
