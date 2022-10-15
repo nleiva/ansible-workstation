@@ -33,3 +33,13 @@ If you want to run it on a fresh system without Ansible.
 $ python3 -m pip install --user ansible-core
 $ python3 -m pip show ansible-core
 ```
+
+## Internal RH stuff
+
+You need to manually install a couple of RPM's first: [See method 3](https://redhat.service-now.com/help?id=kb_article_view&sysparm_article=KB0005424).
+
+To skip these tasks, use tag `red_hat`:
+
+```
+$ ansible-playbook workstation.yml -vK -e "ansible_user=nleiva" --skip-tags "rhel_repo, fusion_repo, red_hat"
+```

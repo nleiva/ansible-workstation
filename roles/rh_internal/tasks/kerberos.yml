@@ -42,3 +42,35 @@
 - name: Update CA Trust
   ansible.builtin.command:
     cmd: update-ca-trust
+
+- name: Make sure /etc/ipa exists
+  ansible.builtin.file:
+    path: /etc/ipa
+    owner: "{{ ansible_user }}"
+    group: "{{ ansible_user }}"
+    state: directory
+    mode: '0755'
+
+- name: Download the IPA cert
+  ansible.builtin.get_url:
+    url: https://password.corp.redhat.com/ipa.crt
+    dest: /etc/ipa/ca.crt
+    mode: '0644'
+
+- name: Download the Kerberos configuration
+  ansible.builtin.get_url:
+    url: https://gitlab.corp.redhat.com/it-iam/system-configs/raw/master/krb5/idm/linux-krb5.conf
+    dest: /etc/krb5.conf.d/redhat-idm.conf
+    mode: '0644'
+
+- name: Fix auto-include
+  ansible.builtin.replace:
+    path: /etc/krb5.conf.d/redhat-idm.conf
+    regexp: '^includedir /etc/krb5.conf.d/$'
+    replace: '# includedir /etc/krb5.conf.d/'
+
+- name: Copy Kerberos/VPN script
+  ansible.builtin.template:
+    src: vpn.sh.j2
+    dest: "~/vpn.sh"
+  become: false

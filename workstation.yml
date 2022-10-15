@@ -22,6 +22,7 @@
     - name: Install Reh Hat internal stuff
       ansible.builtin.include_role:
         name: rh_internal
+      tags: [red_hat]
 
     - name: Final details
       block:
