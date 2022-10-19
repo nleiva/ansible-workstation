@@ -1,0 +1,41 @@
+---
+# Set your laptop's hostname to $USER.users.ipa.redhat.com
+# reboot
+# Run playbook with the variables:
+# "password=$PIN_PLUS_TOKEN"
+
+- name: Get OTP
+  ansible.builtin.uri:
+    url: https://ipa.utility.iam.redhat.com/restricted/
+    user: "{{ ansible_user }}"
+    password: "{{ password }}"
+    method: POST
+    body: "idmshortname={{ ansible_user }}"
+    force_basic_auth: true
+    ca_path: /etc/openldap/cacerts/RH-IT-Root-CA.crt
+  register: otp_password
+
+# grep -A1 "One time password:" | tail -1
+- name: Show OTP
+  ansible.builtin.debug: msg="{{ otp_password.stdout }}"
+
+- name: Install rhit-idm-configs from internal repo
+  ansible.builtin.yum:
+    name: "{{ rhit-idm-configs }}"
+    state: present
+
+# Replace with https://github.com/freeipa/ansible-freeipa/tree/master/roles/ipaclient
+- name: install the client
+  ansible.builtin.shell:
+    cmd: >
+      ipa-client-install
+      --domain=ipa.redhat.com
+      --ntp-server=clock1.rdu2.redhat.com
+      --ntp-server=clock02.util.phx2.redhat.com
+      --ntp-server=clock.bos.redhat.com
+      --force-ntpd
+      --ssh-trust-dns
+      --enable-dns-updates
+      --permit
+      --password="{{ otp_password.stdout }}"
+      -U && cat /usr/share/rhit-ipa/krb5.conf > /etc/krb5.conf

@@ -22,9 +22,12 @@ base_software:
   RedHat:
     - bind-utils
     - gcc
+    - ipa-client
+    - ipa-admintools
     - libssh-devel
     - NetworkManager-openvpn
     - python3-devel
+    - python3-libselinux
     - go-toolset
 
 python_libraries:
@@ -87,3 +90,6 @@ right_box_menu:
 
 center_box_menu:
   - Resource_Monitor@Ory0n
+
+rhit-idm: http://coprbe.devel.redhat.com/results/it-iam-team/rhit-idm-configs/
+rhit-idm-configs: "{{ rhit-idm }}rhel-8-x86_64/00088226-rhit-idm-configs/rhit-idm-configs-1.0.0-1658154031.noarch.rpm"

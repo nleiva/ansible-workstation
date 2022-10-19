@@ -35,7 +35,7 @@
   retries: 3
   delay: 5
 
-- name: Rehash cacerts
+- name: Rehash CA certs
   ansible.builtin.command:
     cmd: openssl rehash /etc/openldap/cacerts
 
@@ -46,8 +46,8 @@
 - name: Make sure /etc/ipa exists
   ansible.builtin.file:
     path: /etc/ipa
-    owner: "{{ ansible_user }}"
-    group: "{{ ansible_user }}"
+    owner: root
+    group: root
     state: directory
     mode: '0755'
 
