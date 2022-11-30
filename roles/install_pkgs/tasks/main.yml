@@ -20,6 +20,15 @@
     remote: flathub
   become: false
 
+- name: Repair Flatpak
+  ansible.builtin.command:
+    cmd: flatpak repair
+
+- name: Update Flatpak
+  ansible.builtin.command:
+    cmd: flatpak update -y
+  become: false
+
 - name: Install Python dependencies within a user home directory
   ansible.builtin.pip:
     name: "{{ python_libraries }}"
