@@ -5,7 +5,7 @@
     exclude: "{{ exclude_pkgs }}"
 
 - name: Install base packages
-  ansible.builtin.package:
+  ansible.builtin.dnf:
     name: "{{ base_software[ansible_distribution_file_variety] | union(common_software) }}"
     state: present
   register: package_check
