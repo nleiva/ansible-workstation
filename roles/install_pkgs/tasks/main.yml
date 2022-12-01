@@ -1,7 +1,8 @@
 - name: Update all packages
-  ansible.builtin.package:
+  ansible.builtin.dnf:
     name: '*'
     state: latest
+    exclude: "{{ exclude_pkgs }}"
 
 - name: Install base packages
   ansible.builtin.package:
