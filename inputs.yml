@@ -18,6 +18,7 @@ common_software:
   - unzip
   - wget
 
+exclude_pkgs: kernel*,kmod-kvdo*,vdo*
 
 base_software:
   RedHat:
