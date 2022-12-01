@@ -36,4 +36,4 @@
         path: "/tmp/{{ extension }}.zip"
         state: absent
       changed_when: false
-  when: extension_meta.stat.exists is false
+  when: not extension_meta.stat.exists
