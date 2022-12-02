@@ -5,6 +5,7 @@ common_software:
 # - ffmpeg
   - git
   - gnome-tweaks
+  - hplip
   - htop
   - krb5-workstation
   - netcat
