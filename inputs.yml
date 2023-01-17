@@ -2,6 +2,7 @@ common_software:
   - cargo
   - code
   - flatpak
+  - firefox
 # - ffmpeg
   - git
   - gnome-tweaks
