@@ -43,3 +43,10 @@ To skip these tasks, use tag `red_hat`:
 ```
 $ ansible-playbook workstation.yml -vK -e "ansible_user=nleiva" --skip-tags "rhel_repo, fusion_repo, red_hat"
 ```
+
+## After restoring files
+
+```
+sudo cp MyCA.pem /etc/pki/ca-trust/source/anchors/MyCA.pem
+sudo update-ca-trust
+```
