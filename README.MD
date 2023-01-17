@@ -50,3 +50,14 @@ $ ansible-playbook workstation.yml -vK -e "ansible_user=nleiva" --skip-tags "rhe
 sudo cp MyCA.pem /etc/pki/ca-trust/source/anchors/MyCA.pem
 sudo update-ca-trust
 ```
+
+## Disable
+
+`/etc/gdm/custom.conf`
+
+```ini
+[daemon]
+# Uncomment the line below to force the login screen to use Xorg
+WaylandEnable=false
+DefaultSession=gnome-xorg.desktop
+```
