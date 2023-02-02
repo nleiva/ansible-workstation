@@ -61,7 +61,7 @@ sudo update-ca-trust
 WaylandEnable=false
 DefaultSession=gnome-xorg.desktop
 ```
-# Hack for
+## Hack to fix SFTP for non-interactive sessions
 
 Put following into top of ~/.bashrc on username of id on remote machine if that id uses bash (SOURCE: https://unix.stackexchange.com/a/505642).
 
