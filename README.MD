@@ -61,3 +61,11 @@ sudo update-ca-trust
 WaylandEnable=false
 DefaultSession=gnome-xorg.desktop
 ```
+# Hack for
+
+Put following into top of ~/.bashrc on username of id on remote machine if that id uses bash (SOURCE: https://unix.stackexchange.com/a/505642).
+
+```bash
+# If not running interactively, don't do anything and return early
+[[ $- == *i* ]] || return  
+```
