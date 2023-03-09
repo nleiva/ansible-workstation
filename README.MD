@@ -16,13 +16,13 @@ $ ansible-galaxy collection install community.general --upgrade
 Need a local user and `become` password. All inputs are in the [inputs.yml](inputs.yml) file.
 
 ```
-$ ansible-playbook workstation.yml -vK -e "ansible_user=nleiva"
+$ ansible-playbook rhel.yml -vK -e "ansible_user=nleiva"
 ```
 
 Use of tags example: Don't re-install RHEL additional repositories and skip RPM Fusion.
 
 ```
-$ ansible-playbook workstation.yml -vK -e "ansible_user=nleiva" --skip-tags "rhel_repo, fusion_repo"
+$ ansible-playbook rhel.yml -vK -e "ansible_user=nleiva" --skip-tags "rhel_repo, fusion_repo"
 ```
 
 ## Running on a new install
@@ -41,7 +41,7 @@ You need to manually install a couple of RPM's first: [See method 3](https://red
 To skip these tasks, use tag `red_hat`:
 
 ```
-$ ansible-playbook workstation.yml -vK -e "ansible_user=nleiva" --skip-tags "rhel_repo, fusion_repo, red_hat"
+$ ansible-playbook rhel.yml -vK -e "ansible_user=nleiva" --skip-tags "rhel_repo, fusion_repo, red_hat"
 ```
 
 ## After restoring files
@@ -68,4 +68,14 @@ Put following into top of ~/.bashrc on username of id on remote machine if that 
 ```bash
 # If not running interactively, don't do anything and return early
 [[ $- == *i* ]] || return  
+```
+
+## Fedora
+
+After enabling the RH_internal stuff
+
+To skip these tasks, use tag `red_hat`:
+
+```
+$ ansible-playbook fedora.yml -vK -e "ansible_user=nleiva" --skip-tags "rhel_repo, fusion_repo, flatpak"
 ```

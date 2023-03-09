@@ -1,3 +1,7 @@
+os:
+  Fedora: fedora
+  RedHat: rhel
+
 common_software:
   - cargo
   - code
@@ -33,6 +37,17 @@ base_software:
     - python3-devel
     - python3-libselinux
     - go-toolset
+  Fedora:
+    - bind-utils
+    - gcc
+    - ipa-client
+    - ipa-admintools
+    - libssh-devel
+    - NetworkManager-openvpn
+    - openssl
+    - python3-devel
+    - python3-libselinux
+    - golang
 
 python_libraries:
   - ansible-core
@@ -40,6 +55,7 @@ python_libraries:
   - ansible-navigator
   - ansible-pylibssh
   - ipaddress
+  - psutil
   - resolvelib>=0.5.3,<0.6.0
 
 flathub_apps:
@@ -73,7 +89,7 @@ rpmfusion_repo: "https://mirrors.rpmfusion.org/free/el/rpmfusion-free-release-{{
 vscode_repo: https://packages.microsoft.com/yumrepos/vscode
 vscode_key: https://packages.microsoft.com/keys/microsoft.asc
 
-tailscale_repo: "https://pkgs.tailscale.com/stable/rhel/{{ ansible_distribution_major_version }}/tailscale.repo"
+tailscale_repo: "https://pkgs.tailscale.com/stable/{{ os[ansible_distribution] }}/{{ ansible_distribution_major_version }}/tailscale.repo"
 
 flathub: https://flathub.org/repo/flathub.flatpakrepo
 

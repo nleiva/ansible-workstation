@@ -6,7 +6,7 @@
 
 - name: Install base packages
   ansible.builtin.dnf:
-    name: "{{ base_software[ansible_distribution_file_variety] | union(common_software) }}"
+    name: "{{ base_software[ansible_distribution] | union(common_software) }}"
     state: present
   register: package_check
   until: package_check is not failed
@@ -20,15 +20,18 @@
     method: user
     remote: flathub
   become: false
+  tags: flatpak
 
 - name: Repair Flatpak
   ansible.builtin.command:
     cmd: flatpak repair
+  tags: flatpak
 
 - name: Update Flatpak
   ansible.builtin.command:
     cmd: flatpak update -y
   become: false
+  tags: flatpak
 
 - name: Install Python dependencies within a user home directory
   ansible.builtin.pip:

@@ -16,7 +16,9 @@
   retries: 5
   delay: 10
   ignore_errors: "{{ ansible_check_mode }}"
-  tags: default_repos
+  tags:
+    - default_repos
+    - rhel_repo
 
 - name: Install EPEL repo
   ansible.builtin.yum:
@@ -26,7 +28,9 @@
   until: result is succeeded
   retries: 5
   delay: 10
-  tags: default_repos
+  tags:
+    - default_repos
+    - rhel_repo
 
 - name: Install RPM Fusion repo
   ansible.builtin.yum:
@@ -59,7 +63,9 @@
     state: absent
     method: user
   become: false
-  tags: default_repos
+  tags:
+    - default_repos
+    - flatpak
 
 - name: Add the Flathub flatpak repository remote to the user installation
   community.general.flatpak_remote:
@@ -68,4 +74,6 @@
     flatpakrepo_url: "{{ flathub }}"
     method: user
   become: false
-  tags: default_repos
+  tags:
+    - default_repos
+    - flatpak

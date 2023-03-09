@@ -1,5 +1,5 @@
-- name: Prepare my workstation after OS (RHEL9) installation
-  hosts: laptop
+- name: Prepare my workstation after OS (Fedora) installation
+  hosts: localhost
   gather_facts: true
   become: true
   vars_files: inputs.yml
@@ -8,7 +8,6 @@
     - name: Starting debug message
       ansible.builtin.debug:
         msg: "It will start working on {{ inventory_hostname }}:{{ ansible_host }}"
-      tags: rhel_repo
 
     - name: RPM Repositories role
       ansible.builtin.include_role:
@@ -19,7 +18,7 @@
       ansible.builtin.include_role:
         name: install_pkgs
 
-    - name: Install Reh Hat internal stuff
+    - name: Install Red Hat internal stuff
       ansible.builtin.include_role:
         name: rh_internal
       tags: [red_hat]
