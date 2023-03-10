@@ -15,23 +15,23 @@
 
 - name: Install apps from flathub for current user
   community.general.flatpak:
-    name: "{{ flathub_apps }}"
+    name: "{{ flathub_apps[ansible_distribution] }}"
     state: present
     method: user
     remote: flathub
   become: false
   tags: flatpak
 
-- name: Repair Flatpak
-  ansible.builtin.command:
-    cmd: flatpak repair
-  tags: flatpak
+# - name: Repair Flatpak
+#   ansible.builtin.command:
+#     cmd: flatpak repair
+#   tags: flatpak
 
-- name: Update Flatpak
-  ansible.builtin.command:
-    cmd: flatpak update -y
-  become: false
-  tags: flatpak
+# - name: Update Flatpak
+#   ansible.builtin.command:
+#     cmd: flatpak update -y
+#   become: false
+#   tags: flatpak
 
 - name: Install Python dependencies within a user home directory
   ansible.builtin.pip:

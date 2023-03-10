@@ -59,26 +59,32 @@ python_libraries:
   - resolvelib>=0.5.3,<0.6.0
 
 flathub_apps:
-  - ca.desrt.dconf-editor
-  - com.belmoussaoui.Obfuscate
-  - com.github.IsmaelMartinez.teams_for_linux
-  - com.github.PintaProject.Pinta
-  - com.google.Chrome
-  - com.mattjakeman.ExtensionManager
-  - com.obsproject.Studio
-  - com.slack.Slack
-  - io.posidon.Paper
-  - org.fedoraproject.MediaWriter
-  - org.gnome.DejaDup
-  - org.gnome.Logs
-  - org.gnome.TextEditor
-  - org.wireshark.Wireshark
-  - us.zoom.Zoom
+  RedHat:
+    - ca.desrt.dconf-editor
+    - com.belmoussaoui.Obfuscate
+    - com.github.IsmaelMartinez.teams_for_linux
+    - com.github.PintaProject.Pinta
+    - com.google.Chrome
+    - com.mattjakeman.ExtensionManager
+    - com.obsproject.Studio
+    - com.slack.Slack
+    - io.posidon.Paper
+    - org.fedoraproject.MediaWriter
+    - org.gnome.DejaDup
+    - org.gnome.Logs
+    - org.gnome.TextEditor
+    - org.wireshark.Wireshark
+    - us.zoom.Zoom
+  Fedora:
+    - com.github.PintaProject.Pinta
+    - com.slack.Slack
+    - org.gnome.TextEditor
+    - us.zoom.Zoom
 
 # Repositories
 rhel_repos:
   - "codeready-builder-for-rhel-{{ ansible_distribution_major_version }}-x86_64-rpms"
-  - "ansible-automation-platform-2.2-for-rhel-{{ ansible_distribution_major_version }}-x86_64-rpms"
+  - "ansible-automation-platform-2.3-for-rhel-{{ ansible_distribution_major_version }}-x86_64-rpms"
 
 epel_repo: "https://dl.fedoraproject.org/pub/epel/epel-release-latest-{{ ansible_distribution_major_version }}.noarch.rpm"
 epel_key: "https://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-{{ ansible_distribution_major_version }}"

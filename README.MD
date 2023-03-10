@@ -72,10 +72,8 @@ Put following into top of ~/.bashrc on username of id on remote machine if that 
 
 ## Fedora
 
-After enabling the RH_internal stuff
-
-To skip these tasks, use tag `red_hat`:
+After enabling the RH_internal stuff. To skip these tasks, use tag `red_hat`:
 
 ```
-$ ansible-playbook fedora.yml -vK -e "ansible_user=nleiva" --skip-tags "rhel_repo, fusion_repo, flatpak"
+$ ansible-playbook fedora.yml -vK -e "ansible_user=nleiva" --skip-tags "rhel_repo, fusion_repo, red_hat"
 ```

@@ -30,7 +30,7 @@
   ansible.builtin.copy:
     src: /etc/pki/ca-trust/source/anchors/RH-IT-Root-CA.crt
     dest: /etc/openldap/cacerts/RH-IT-Root-CA.crt
-    remote_src: yes
+    remote_src: true
 
 - name: Rehash CA certs
   ansible.builtin.command:
