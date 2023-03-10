@@ -1,5 +1,5 @@
 - name: Prepare my workstation after OS (Fedora) installation
-  hosts: localhost
+  hosts: laptop
   gather_facts: true
   become: true
   vars_files: inputs.yml

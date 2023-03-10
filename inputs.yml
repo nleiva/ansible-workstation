@@ -7,12 +7,13 @@ common_software:
   - code
   - flatpak
   - firefox
-# - ffmpeg
+  - ffmpeg
   - git
   - gnome-tweaks
   - hplip
   - htop
   - krb5-workstation
+  - gstreamer1-libav
   - netcat
 # - protobuf-compiler
   - python3-pip
@@ -90,7 +91,10 @@ epel_repo: "https://dl.fedoraproject.org/pub/epel/epel-release-latest-{{ ansible
 epel_key: "https://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-{{ ansible_distribution_major_version }}"
 
 # https://rpmfusion.org/
-rpmfusion_repo: "https://mirrors.rpmfusion.org/free/el/rpmfusion-free-release-{{ ansible_distribution_major_version }}.noarch.rpm"
+fusion:
+  Fedora: fedora
+  RedHat: el
+rpmfusion_repo: "https://download1.rpmfusion.org/free/{{ fusion[ansible_distribution] }}/rpmfusion-free-release-{{ ansible_distribution_major_version }}.noarch.rpm"
 
 vscode_repo: https://packages.microsoft.com/yumrepos/vscode
 vscode_key: https://packages.microsoft.com/keys/microsoft.asc

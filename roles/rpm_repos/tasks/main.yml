@@ -36,6 +36,7 @@
   ansible.builtin.yum:
     name: "{{ rpmfusion_repo }}"
     state: present
+    disable_gpg_check: true
   register: result
   until: result is succeeded
   retries: 5
