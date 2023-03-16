@@ -89,19 +89,23 @@ rhel_repos:
   - "codeready-builder-for-rhel-{{ ansible_distribution_major_version }}-x86_64-rpms"
   - "ansible-automation-platform-2.3-for-rhel-{{ ansible_distribution_major_version }}-x86_64-rpms"
 
-epel_repo: "https://dl.fedoraproject.org/pub/epel/epel-release-latest-{{ ansible_distribution_major_version }}.noarch.rpm"
-epel_key: "https://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-{{ ansible_distribution_major_version }}"
+epel_repo: "https://dl.fedoraproject.org/pub/epel\
+ /epel-release-latest-{{ ansible_distribution_major_version }}.noarch.rpm"
+epel_key: "https://dl.fedoraproject.org/pub/epel\
+ /RPM-GPG-KEY-EPEL-{{ ansible_distribution_major_version }}"
 
 # https://rpmfusion.org/
 fusion:
   Fedora: fedora
   RedHat: el
-rpmfusion_repo: "https://download1.rpmfusion.org/free/{{ fusion[ansible_distribution] }}/rpmfusion-free-release-{{ ansible_distribution_major_version }}.noarch.rpm"
+rpmfusion_repo: "https://download1.rpmfusion.org/free/{{ fusion[ansible_distribution] }}\
+ /rpmfusion-free-release-{{ ansible_distribution_major_version }}.noarch.rpm"
 
 vscode_repo: https://packages.microsoft.com/yumrepos/vscode
 vscode_key: https://packages.microsoft.com/keys/microsoft.asc
 
-tailscale_repo: "https://pkgs.tailscale.com/stable/{{ os[ansible_distribution] }}/{{ ansible_distribution_major_version }}/tailscale.repo"
+tailscale_repo: "https://pkgs.tailscale.com/stable/{{ os[ansible_distribution] }}\
+ /{{ ansible_distribution_major_version }}/tailscale.repo"
 
 flathub: https://flathub.org/repo/flathub.flatpakrepo
 
@@ -123,4 +127,5 @@ center_box_menu:
   - Resource_Monitor@Ory0n
 
 rhit-idm: http://coprbe.devel.redhat.com/results/it-iam-team/rhit-idm-configs/
-rhit-idm-configs: "{{ rhit-idm }}rhel-8-x86_64/00088226-rhit-idm-configs/rhit-idm-configs-1.0.0-1658154031.noarch.rpm"
+rhit-idm-configs: "{{ rhit-idm }}rhel-8-x86_64/00088226-rhit-idm-configs\
+ /rhit-idm-configs-1.0.0-1658154031.noarch.rpm"
