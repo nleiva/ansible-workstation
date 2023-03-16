@@ -43,7 +43,9 @@ base_software:
     - gcc
     - ipa-client
     - ipa-admintools
+    - gstreamer1-plugin-openh264
     - libssh-devel
+    - mozilla-openh264
     - NetworkManager-openvpn
     - openssl
     - python3-devel
