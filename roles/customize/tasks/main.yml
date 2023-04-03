@@ -13,3 +13,7 @@
 
 - name: Config GNOME Extensions
   ansible.builtin.include_tasks: gnome_config.yml
+
+- name: Disable Wayland
+  ansible.builtin.include_tasks: wayland.yml
+  tags: [wayland]

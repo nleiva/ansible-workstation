@@ -73,6 +73,7 @@ flathub_apps:
     - com.slack.Slack
     - io.posidon.Paper
     - org.fedoraproject.MediaWriter
+    - org.glimpse_editor.Glimpse
     - org.gnome.DejaDup
     - org.gnome.Logs
     - org.gnome.TextEditor

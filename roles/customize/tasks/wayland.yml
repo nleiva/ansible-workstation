@@ -1,0 +1,19 @@
+- name: Disable Wayland
+  community.general.ini_file:
+    path: /etc/gdm/custom.conf
+    section: daemon
+    option: WaylandEnable
+    value: false
+    state: present
+    create: false
+  become: true
+
+- name: Add "DefaultSession=gnome-xorg.desktop" in section "[daemon]" in /etc/gdm/custom.conf
+  community.general.ini_file:
+    path: /etc/gdm/custom.conf
+    section: daemon
+    option: DefaultSession
+    value: gnome-xorg.desktop
+    state: present
+    exclusive: false
+  become: true

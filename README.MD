@@ -51,7 +51,9 @@ sudo cp MyCA.pem /etc/pki/ca-trust/source/anchors/MyCA.pem
 sudo update-ca-trust
 ```
 
-## Disable
+## Disable Wayland
+
+To be able to screen-share during meetings.
 
 `/etc/gdm/custom.conf`
 

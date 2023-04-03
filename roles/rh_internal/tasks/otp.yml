@@ -25,7 +25,7 @@
     state: present
 
 # Replace with https://github.com/freeipa/ansible-freeipa/tree/master/roles/ipaclient
-- name: install the client
+- name: Install the client
   ansible.builtin.shell:
     cmd: >
       ipa-client-install
